@@ -76,7 +76,7 @@ logits_processor = LogitsProcessorList([
 ])
 stop_criteria = StoppingCriteriaList([TagStopCriteria(tokenizer)])
 
-NUM_SAMPLES = 3
+NUM_SAMPLES = 1
 
 
 # ─────────────────────────────────────────
@@ -100,11 +100,11 @@ for level in range(-1, 6):
             attention_mask=attention_mask,
             max_new_tokens=64,
             num_return_sequences=NUM_SAMPLES,
-            temperature=0.7,
+            temperature=0.0,
             top_k=50,
             top_p=0.8,
             repetition_penalty=1.6,
-            do_sample=True,
+            do_sample=False,
             pad_token_id=tokenizer.eos_token_id,
             logits_processor=logits_processor,
             stopping_criteria=stop_criteria,
